@@ -11,22 +11,25 @@ using System.Threading.Tasks;
 
 namespace AudioGistogrammer
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            float[] averageBuffer = new float[702];
-            string path = @"C:\Users\Alexander\Desktop\IGOR - 2019\5. RUNNING OUT OF TIME.mp3";
-            Gistogrammer gistogrammer = new Gistogrammer(path);
-            gistogrammer.calculateValues(702);
-            float[] map = gistogrammer.getValuesInPersent();
-            Console.WriteLine("______________________________");
-            Array.ForEach(map, Console.WriteLine);
-        }
-    }
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        float[] averageBuffer = new float[702];
+    //        string path = @"C:\Users\Alexander\Desktop\IGOR - 2019\5. RUNNING OUT OF TIME.mp3";
+    //        Gistogrammer gistogrammer = new Gistogrammer(path);
+    //        gistogrammer.calculateValues(1000);
+    //        float[] map = gistogrammer.getValuesInPersent();
+    //        Console.WriteLine("______________________________");
+    //        Array.ForEach(map, Console.WriteLine);
+    //        for (int i = 0; i < map.Length; i++)
+    //        {
+    //            Console.WriteLine(i + ") " + map[i]);
+    //        }
+    //    }
+    //}
 
-
-    class Gistogrammer
+   public class Gistogrammer
     {
         private WaveBuffer buffer;
         private float[] valuesBuffer;
@@ -59,22 +62,18 @@ namespace AudioGistogrammer
             for (int i = 0; i < this.valuesBuffer.Length; i++)
             {
                 newBuffer[i] = this.valuesBuffer[i] * 100 / maxAverage;
-                
+
             }
-            Console.WriteLine("COUNT = " + count);
             return newBuffer;
         }
-        private void normalizeBuffer() {
-            Console.WriteLine("MinValue = " + minAverage);
+        private void normalizeBuffer()
+        {
             for (int i = 0; i < this.valuesBuffer.Length; i++)
             {
                 this.valuesBuffer[i] = this.valuesBuffer[i] + Math.Abs(minAverage);
             }
-
-            Array.ForEach(this.valuesBuffer, Console.WriteLine);
             maxAverage = Math.Abs(minAverage) + Math.Abs(maxAverage);
             minAverage = 0;
-
         }
         public void calculateValues(int pointsCount)
         {
@@ -87,11 +86,8 @@ namespace AudioGistogrammer
             {
                 averageValue += buffer.FloatBuffer[i];
                 startRange++;
-
                 if (startRange == range)
                 {
-                    //Console.WriteLine("Start range = " + startRange);
-                    //Console.WriteLine("PLus average value = " + averageValue);
                     averageValue = averageValue / range;
                     valuesBuffer[number] = averageValue;
                     if (averageValue > maxAverage)
@@ -102,20 +98,13 @@ namespace AudioGistogrammer
                     {
                         minAverage = averageValue;
                     }
-                    //Console.WriteLine(averageValue);
                     number++;
                     averageValue = 0.0f;
                     startRange = 0;
                 }
-                //floatBuffer[i] = _waveBuffer.FloatBuffer[i];
 
             }
-            Console.WriteLine("Max value = " + maxAverage);
-            Console.WriteLine("Min value = " + minAverage);
-
 
         }
-
-
     }
 }
