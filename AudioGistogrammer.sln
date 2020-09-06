@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioGistogrammer", "AudioGistogrammer\AudioGistogrammer.csproj", "{45BA869B-9924-43C1-9EB7-DAD6AB7D1B15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{CD5D7819-45AC-4766-82E8-257B1E52622B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{0627F951-6826-4736-A7E5-FE0CB77C88D4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{45BA869B-9924-43C1-9EB7-DAD6AB7D1B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45BA869B-9924-43C1-9EB7-DAD6AB7D1B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45BA869B-9924-43C1-9EB7-DAD6AB7D1B15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD5D7819-45AC-4766-82E8-257B1E52622B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD5D7819-45AC-4766-82E8-257B1E52622B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD5D7819-45AC-4766-82E8-257B1E52622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD5D7819-45AC-4766-82E8-257B1E52622B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0627F951-6826-4736-A7E5-FE0CB77C88D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0627F951-6826-4736-A7E5-FE0CB77C88D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0627F951-6826-4736-A7E5-FE0CB77C88D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0627F951-6826-4736-A7E5-FE0CB77C88D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

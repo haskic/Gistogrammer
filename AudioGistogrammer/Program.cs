@@ -29,7 +29,7 @@ namespace AudioGistogrammer
     //    }
     //}
 
-   public class Gistogrammer
+    public class Gistogrammer
     {
         private WaveBuffer buffer;
         private float[] valuesBuffer;
@@ -53,16 +53,14 @@ namespace AudioGistogrammer
             return this.valuesBuffer;
         }
 
-        public float[] getValuesInPersent()
+        public float[] getValuesInPersent(int roundValue = 2)
         {
             normalizeBuffer();
             float[] newBuffer = new float[this.valuesBuffer.Length];
             float range = Math.Abs(maxAverage) + Math.Abs(minAverage);
-            int count = 0;
             for (int i = 0; i < this.valuesBuffer.Length; i++)
             {
-                newBuffer[i] = this.valuesBuffer[i] * 100 / maxAverage;
-
+                newBuffer[i] = (float)Math.Round((double)this.valuesBuffer[i] * 100 / maxAverage, roundValue, MidpointRounding.AwayFromZero);
             }
             return newBuffer;
         }
